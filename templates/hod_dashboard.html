@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOD Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2>HOD Approval Panel</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for app in applications %}
+            <tr>
+                <td>{{ app.id }}</td>
+                <td>{{ app.name }}</td>
+                <td>{{ app.reason }}</td>
+                <td>{{ app.status }}</td>
+                <td>
+                    {% if app.status == 'Pending' %}
+                        <a href="{{ url_for('approve', app_id=app.id) }}" class="btn btn-success btn-sm">Approve</a>
+                        <a href="{{ url_for('reject', app_id=app.id) }}" class="btn btn-danger btn-sm">Reject</a>
+                    {% else %}
+                        <span class="text-muted">No action</span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Gatepass Status</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-success bg-opacity-10">
+<div class="container mt-5">
+    <h2>Your Database</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Reason</th>
+      <th>status</th>
+    </tr>
+    </thead>
+    {% for app in overall_app %}
+    <tr>
+      <td>{{ app.id }}</td>
+      <td>{{ app.username }}</td>
+      <td>{{ app.reason }}</td>
+      <td>{{ app.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

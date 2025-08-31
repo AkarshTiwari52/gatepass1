@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="login_section_card">
+    <h1>🔑 Login</h1>
+    <form action="/login" method="POST">
+      <input type="text" name="username" class="login_section_card-input" placeholder="👤 Username" required>
+      <input type="password" name="password" class="login_section_card-input" placeholder="🔒 Password" required>
+      
+      <select name="role" class="login_section_card-input" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="student">🎓 Student</option>
+        <option value="teacher">📘 Teacher</option>
+        <option value="hod">🏫 HOD</option>
+        <option value="guard">🛡️ Guard</option>
+      </select>
+
+      <button id="Sign" type="submit">🚀 Sign in</button>
+    </form>
+
+    <p>Don't have an account? <a href="/register_for">Register</a></p>
+  </div>
+
+</body>
+</html>
